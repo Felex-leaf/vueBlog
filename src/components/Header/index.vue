@@ -28,7 +28,7 @@ import ThemeBtn from '@/components/ThemeBtn/index.vue';
 import { routes } from '../../router/index';
 import { jump } from '../../utils';
 
-const links = reactive<RouteRecordRaw[]>(routes);
+const links = reactive<RouteRecordRaw[]>(routes).filter((item) => !item.meta || !item.meta.hidden);
 </script>
 
 <style lang="less" scoped>

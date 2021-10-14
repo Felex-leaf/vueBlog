@@ -8,6 +8,13 @@ import Test from '@/views/Test/index.vue';
 
 export const routes: RouteRecordRaw[] = [
   {
+    path: '/',
+    redirect: '/home',
+    meta: {
+      hidden: true,
+    },
+  },
+  {
     path: '/home',
     name: '首页',
     component: Home,
