@@ -1,0 +1,167 @@
+:root {
+  --theme-bgColor: #0d5afe;
+  --theme-bgColorA: rgba(13, 90, 254, 0.7);
+  --theme-bgColorH: #64b5ff;
+  --theme-bgColorW: #fff;
+  --theme-bgColorZ: #f9fbff;
+  --theme-Color: #333;
+  --theme-ColorA: rgba(0, 0, 0, 0.6);
+}
+.isDark:root {
+  --theme-bgColor: #000;
+  --theme-bgColorA: rgba(0, 0, 0, 0.7);
+  --theme-bgColorH: #333;
+  --theme-bgColorW: #222;
+  --theme-bgColorZ: #111;
+  --theme-Color: #fff;
+  --theme-ColorA: rgba(255, 255, 255, 0.6);
+}
+
+a {
+  text-decoration: none;
+}
+
+@themeBgColor: var(--theme-bgColor);
+@themeBgColorA: var(--theme-bgColorA);
+@themeBgColorH: var(--theme-bgColorH);
+@themeBgColorW: var(--theme-bgColorW);
+@themeBgColorZ: var(--theme-bgColorZ);
+@themeColor: var(--theme-Color);
+@themeColorA: var(--theme-ColorA);
+
+.forXs(@content) {
+  @media (max-width: 575px) {
+      @content();
+  }
+}
+
+.forMd(@content) {
+  @media (max-width: 768px) {
+      @content();
+  }
+}
+
+.forLg(@content) {
+  @media (max-width: 992px) {
+      @content();
+  }
+}
+
+.forXl(@content) {
+  @media (max-width: 1199ox) {
+      @content();
+  }
+}
+
+.forXxl(@content) {
+  @media (min-width: 1200px) {
+      @content();
+  }
+}
+
+.forPhone(@content) {
+  @media (max-width: 767px) {
+      @content();
+  }
+}
+
+.forPad(@content) {
+  @media (max-width: 1023px) {
+      @content();
+  }
+}
+
+.forPc(@content) {
+  @media (min-width: 1024px) {
+      @content();
+  }
+}
+
+.ellipsis(@val) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @val;
+  -webkit-box-orient: vertical;
+}
+
+.typeArea {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slow(@time: .3s, @type: background-color) {
+  transition: @type @time linear;
+}
+
+.swing {
+  animation: swing 0.4s linear;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s linear;
+}
+
+.swing {
+  animation: swing 0.4s linear;
+}
+
+@keyframes swing {
+  0% {
+      transform: rotate(15deg);
+  }
+
+  30% {
+      transform: rotate(-10deg);
+  }
+
+  60% {
+      transform: rotate(15deg);
+  }
+
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes anmScale {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.3);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
